@@ -30,9 +30,9 @@ public class AddAuthorPage extends AbstractPageObject {
 		return PageFactory.initElements(driver, AddAuthorPage.class);
 	}
 
-	public AddAuthorPage clickAddAuthorButton() {
+	public AddBookPage clickAddAuthorButtonWithData() {
 		addAuthorButton.click();
-		return PageFactory.initElements(driver, AddAuthorPage.class);
+		return PageFactory.initElements(driver, AddBookPage.class);
 	}
 
 	public boolean checkIfAddAuthorButtonIsClicable() {

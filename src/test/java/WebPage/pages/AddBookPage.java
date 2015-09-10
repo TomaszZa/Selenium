@@ -18,6 +18,9 @@ public class AddBookPage extends AbstractPageObject {
 	@FindBy(id = "Dod")
 	private WebElement addBookButton;
 
+	@FindBy(linkText = "Book List")
+	private WebElement bookListlink;
+
 	public AddBookPage(WebDriver driver) {
 		super(driver);
 	}
@@ -34,6 +37,16 @@ public class AddBookPage extends AbstractPageObject {
 
 	public boolean checkIfAddBookButtonIsPressed() {
 		return driver.findElement(By.id("Dod")).isEnabled();
+	}
+
+	public AddBookPage clickAddBookButton() {
+		addBookButton.click();
+		return PageFactory.initElements(driver, AddBookPage.class);
+	}
+
+	public SearchBookPage clickBookListLink() {
+		bookListlink.click();
+		return PageFactory.initElements(driver, SearchBookPage.class);
 	}
 
 }

@@ -16,9 +16,11 @@ public class SearchBookPage extends AbstractPageObject {
 	@FindBy(name = "searchButton")
 	private WebElement searchBookButton;
 
-	// @FindBy(className = "ng-scope")
 	@FindBy(name = "ksiazki")
-	List<WebElement> books;
+	private List<WebElement> books;
+
+	@FindBy(linkText = "Author List")
+	private WebElement authorListLink;
 
 	public SearchBookPage(WebDriver driver) {
 		super(driver);
@@ -36,6 +38,11 @@ public class SearchBookPage extends AbstractPageObject {
 
 	public Integer giveNumberOfShownBooks() {
 		return books.size();
+	}
+
+	public SearchAuthorPage clickAuthorListLink() {
+		authorListLink.click();
+		return PageFactory.initElements(driver, SearchAuthorPage.class);
 	}
 
 }

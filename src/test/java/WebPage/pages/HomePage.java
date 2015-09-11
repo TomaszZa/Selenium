@@ -22,4 +22,9 @@ public class HomePage extends AbstractPageObject {
 		bookList.click();
 		return PageFactory.initElements(driver, SearchBookPage.class);
 	}
+
+	public SearchAuthorPage clickAuthorList() {
+		authorList.click();
+		return PageFactory.initElements(driver, SearchAuthorPage.class);
+	}
 }
